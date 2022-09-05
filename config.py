@@ -12,5 +12,6 @@ def pre_spawn_hook(spawner):
         subprocess.check_call(['useradd', '-ms', '/bin/bash', username])
 
 c.Spawner.pre_spawn_hook = pre_spawn_hook
-c.Authenticator.allowed_users = set((os.environ['USERS']).split(","))
+c.Authenticator.allowed_users = set((os.environ['CAN_ACCESS']).split(","))
 c.Authenticator.post_auth_hook = None
+
