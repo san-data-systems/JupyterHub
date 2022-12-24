@@ -27,4 +27,4 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: juyterhub:${{ steps.date.outputs.date }}
+          tags: ${{ secrets.DOCKER_USERNAME }}/juyterhub:${{ steps.date.outputs.date }}
